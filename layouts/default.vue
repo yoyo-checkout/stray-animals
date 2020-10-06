@@ -1,9 +1,5 @@
 <template>
   <v-app>
-    <v-system-bar app>
-      system-bar
-    </v-system-bar>
-
     <v-app-bar app>
       app-bar
     </v-app-bar>
