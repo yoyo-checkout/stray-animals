@@ -1,75 +1,170 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        stray-animals
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div>
+    main page
   </div>
 </template>
 
 <script>
 export default {
   layout: 'default',
+  // async fetch ({ $axios }) {
+  //   const data = await $axios.$get('http://data.coa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL&$top=5&$skip=0&$filter=');
+  //
+  //   console.log(data);
+  // },
+  data () {
+    return {
+      animals: [
+        {
+          animal_id: 179402,
+          animal_subid: 'S09C1006-01',
+          animal_area_pkid: 16,
+          animal_shelter_pkid: 74,
+          animal_place: '臺南市動物之家善化站',
+          animal_kind: '貓',
+          animal_sex: 'F',
+          animal_bodytype: 'MEDIUM',
+          animal_colour: '花色',
+          animal_age: 'CHILD',
+          animal_sterilization: 'F',
+          animal_bacterin: 'F',
+          animal_foundplace: '善化區嘉北里',
+          animal_title: '',
+          animal_status: 'OPEN',
+          animal_remark: '本站動物皆採現場互動面談後評估能否認養 不接受系統上的預約',
+          animal_caption: '',
+          animal_opendate: '2020-10-06',
+          animal_closeddate: '2999-12-31',
+          animal_update: '2020/10/07',
+          animal_createtime: '2020/10/06',
+          shelter_name: '臺南市動物之家善化站',
+          album_file: '',
+          album_update: '',
+          cDate: '2020/10/07',
+          shelter_address: '臺南市善化區東昌里東勢寮1~19號',
+          shelter_tel: '06-5832399'
+        },
+        {
+          animal_id: 179396,
+          animal_subid: 'NAAAG1091007010',
+          animal_area_pkid: 20,
+          animal_shelter_pkid: 80,
+          animal_place: '臺東縣動物收容中心',
+          animal_kind: '狗',
+          animal_sex: 'M',
+          animal_bodytype: 'MEDIUM',
+          animal_colour: '虎斑色',
+          animal_age: '',
+          animal_sterilization: 'F',
+          animal_bacterin: 'F',
+          animal_foundplace: '池上鄉',
+          animal_title: '',
+          animal_status: 'OPEN',
+          animal_remark: '',
+          animal_caption: '',
+          animal_opendate: '2020-10-07',
+          animal_closeddate: '2999-12-31',
+          animal_update: '2020/10/07',
+          animal_createtime: '2020/10/07',
+          shelter_name: '臺東縣動物收容中心',
+          album_file: 'https://asms.coa.gov.tw/amlapp/upload/pic/afe8dad5-5a99-4324-83ad-b05eaf36ade3_org.JPG',
+          album_update: '',
+          cDate: '2020/10/07',
+          shelter_address: '臺東縣臺東市中華路4段999巷600號',
+          shelter_tel: '089-362011'
+        },
+        {
+          animal_id: 179394,
+          animal_subid: 'NAAAG1091007009',
+          animal_area_pkid: 20,
+          animal_shelter_pkid: 80,
+          animal_place: '臺東縣動物收容中心',
+          animal_kind: '狗',
+          animal_sex: 'M',
+          animal_bodytype: 'MEDIUM',
+          animal_colour: '黑棕色',
+          animal_age: '',
+          animal_sterilization: 'F',
+          animal_bacterin: 'F',
+          animal_foundplace: '池上鄉',
+          animal_title: '',
+          animal_status: 'OPEN',
+          animal_remark: '',
+          animal_caption: '',
+          animal_opendate: '2020-10-07',
+          animal_closeddate: '2999-12-31',
+          animal_update: '2020/10/07',
+          animal_createtime: '2020/10/07',
+          shelter_name: '臺東縣動物收容中心',
+          album_file: 'https://asms.coa.gov.tw/amlapp/upload/pic/ee39f3c6-608b-4f7c-9b1c-3e40dfb02930_org.JPG',
+          album_update: '',
+          cDate: '2020/10/07',
+          shelter_address: '臺東縣臺東市中華路4段999巷600號',
+          shelter_tel: '089-362011'
+        },
+        {
+          animal_id: 179393,
+          animal_subid: 'GAAAG1091007007',
+          animal_area_pkid: 11,
+          animal_shelter_pkid: 69,
+          animal_place: '彰化縣流浪狗中途之家',
+          animal_kind: '狗',
+          animal_sex: 'F',
+          animal_bodytype: 'MEDIUM',
+          animal_colour: '黑色',
+          animal_age: 'CHILD',
+          animal_sterilization: 'F',
+          animal_bacterin: 'F',
+          animal_foundplace: '場內捕捉',
+          animal_title: '',
+          animal_status: 'OPEN',
+          animal_remark: '',
+          animal_caption: '',
+          animal_opendate: '2020-10-07',
+          animal_closeddate: '2999-12-31',
+          animal_update: '2020/10/07',
+          animal_createtime: '2020/10/07',
+          shelter_name: '彰化縣流浪狗中途之家',
+          album_file: 'https://asms.coa.gov.tw/amlapp/upload/pic/d9fe42d0-eb5d-4ca5-b9db-f113238faa70_org.jpg',
+          album_update: '',
+          cDate: '2020/10/07',
+          shelter_address: '彰化縣員林市大峯里阿寶巷426號(大門入口請由彰化縣芬園鄉大彰路一段875巷進入走到底)',
+          shelter_tel: '04-8590638'
+        },
+        {
+          animal_id: 179390,
+          animal_subid: 'NAAAG1091007008',
+          animal_area_pkid: 20,
+          animal_shelter_pkid: 80,
+          animal_place: '臺東縣動物收容中心',
+          animal_kind: '狗',
+          animal_sex: 'F',
+          animal_bodytype: 'MEDIUM',
+          animal_colour: '黑黃色',
+          animal_age: '',
+          animal_sterilization: 'F',
+          animal_bacterin: 'F',
+          animal_foundplace: '池上鄉',
+          animal_title: '',
+          animal_status: 'OPEN',
+          animal_remark: '',
+          animal_caption: '',
+          animal_opendate: '2020-10-07',
+          animal_closeddate: '2999-12-31',
+          animal_update: '2020/10/07',
+          animal_createtime: '2020/10/07',
+          shelter_name: '臺東縣動物收容中心',
+          album_file: 'https://asms.coa.gov.tw/amlapp/upload/pic/cefbefce-3908-4874-b038-198f32df24b0_org.JPG',
+          album_update: '',
+          cDate: '2020/10/07',
+          shelter_address: '臺東縣臺東市中華路4段999巷600號',
+          shelter_tel: '089-362011'
+        }
+      ],
+    };
+  },
 };
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
