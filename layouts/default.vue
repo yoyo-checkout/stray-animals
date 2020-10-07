@@ -12,22 +12,18 @@
       </v-container>
     </v-main>
 
-    <v-footer app>
-      footer
-    </v-footer>
-
-    <v-bottom-navigation app>
-      bottom-navigation
-    </v-bottom-navigation>
+    <Footer />
   </v-app>
 </template>
 
 <script>
 import AppBar from '@/components/layouts/AppBar.vue';
+import Footer from '@/components/layouts/Footer.vue';
 
 export default {
   components: {
     AppBar,
+    Footer,
   },
 };
 </script>
