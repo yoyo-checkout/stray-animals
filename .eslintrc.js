@@ -15,7 +15,9 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'comma-dangle': 0,
+    curly: 0,
     semi: 0,
-    "comma-dangle": 0
+    'space-before-function-paren': 0,
   }
 }

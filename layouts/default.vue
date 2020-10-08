@@ -7,6 +7,8 @@
       <!-- Provides the application the proper gutter -->
       <v-container fluid>
         <Nuxt />
+
+        <SearchDrawer />
       </v-container>
     </v-main>
 
@@ -17,11 +19,13 @@
 <script>
 import AppBar from '@/components/layouts/AppBar.vue';
 import Footer from '@/components/layouts/Footer.vue';
+import SearchDrawer from '@/components/index/SearchDrawer';
 
 export default {
   components: {
     AppBar,
     Footer,
+    SearchDrawer,
   },
 };
 </script>
