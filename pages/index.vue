@@ -17,16 +17,12 @@
             aspect-ratio="1"
           />
 
-          <v-card-text>{{ animal.shelter_name }}</v-card-text>
-
-          <v-card-actions>
-            <v-btn text color="orange">
-              Share
-            </v-btn>
-            <v-btn text color="orange">
-              Explore
-            </v-btn>
-          </v-card-actions>
+          <v-card-text>
+            <div @click="openGoogleMap(animal.shelter_name)">
+              <v-icon>mdi-map-marker</v-icon>
+              {{ animal.shelter_name }}
+            </div>
+          </v-card-text>
         </v-card>
       </v-col>
     </v-row>
@@ -200,6 +196,11 @@ export default {
         }
       ],
     };
+  },
+  methods: {
+    openGoogleMap(shelter) {
+      window.open(`https://www.google.com.tw/maps/search/${shelter}`);
+    },
   },
 };
 </script>
