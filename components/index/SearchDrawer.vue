@@ -2,8 +2,11 @@
   <v-navigation-drawer
     :value="isSearchDrawerOpen"
     width="100%"
-    absolute
+    height="calc(100vh - 56px)"
+    overlay-color="transparent"
+    overlay-opacity="1"
     app
+    fixed
     stateless
     temporary
   >
@@ -22,3 +25,15 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scope>
+.v {
+  &-navigation-drawer {
+    top: 56px !important;
+  }
+
+  &-overlay {
+    z-index: 0 !important;
+  }
+}
+</style>

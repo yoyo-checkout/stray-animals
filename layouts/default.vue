@@ -7,10 +7,10 @@
       <!-- Provides the application the proper gutter -->
       <v-container fluid>
         <Nuxt />
-
-        <SearchDrawer />
       </v-container>
     </v-main>
+
+    <SearchDrawer />
 
     <Footer />
   </v-app>
