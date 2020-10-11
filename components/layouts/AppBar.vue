@@ -7,7 +7,12 @@
   >
     <v-app-bar-nav-icon />
 
-    <v-toolbar-title>Stray Animals</v-toolbar-title>
+    <v-toolbar-title>
+      <v-img
+        src="/logo_transparent.png"
+        width="300px"
+      />
+    </v-toolbar-title>
 
     <v-spacer />
 
