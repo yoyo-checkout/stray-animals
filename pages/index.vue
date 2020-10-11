@@ -174,7 +174,7 @@ export default {
 
 <style lang="scss" scope>
 .chip-group {
-  position: absolute;
+  position: absolute !important;
   bottom: 0;
   left: 5px;
 }
