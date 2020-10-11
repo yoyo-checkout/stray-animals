@@ -15,12 +15,35 @@
           <v-img
             :src="animal.album_file"
             aspect-ratio="1"
-          />
+          >
+            <v-chip-group class="chip-group">
+              <v-chip v-if="animal.animal_sex === 'F'" color="pink lighten-4">
+                {{ sexMap[animal.animal_sex] }}
+              </v-chip>
+              <v-chip v-if="animal.animal_sex === 'M'" color="blue lighten-4">
+                {{ sexMap[animal.animal_sex] }}
+              </v-chip>
+              <v-chip v-if="animal.animal_bodytype" color="teal lighten-4">
+                {{ bodyTypeMap[animal.animal_bodytype] }}
+              </v-chip>
+              <v-chip v-if="animal.animal_age" color="brown lighten-4">
+                {{ ageMap[animal.animal_age] }}
+              </v-chip>
+              <v-chip v-if="animal.animal_colour">
+                {{ animal.animal_colour }}
+              </v-chip>
+            </v-chip-group>
+          </v-img>
 
           <v-card-text>
-            <div @click="openGoogleMap(animal.shelter_name)">
+            <div class="d-flex align-center">
               <v-icon>mdi-map-marker</v-icon>
-              {{ animal.shelter_name }}
+              <span
+                class="blue--text map-link"
+                @click="openGoogleMap(animal.shelter_name)"
+              >
+                {{ areaMap[animal.animal_area_pkid] }}
+              </span>
             </div>
           </v-card-text>
         </v-card>
@@ -39,6 +62,19 @@ export default {
   // },
   data () {
     return {
+      sexMap: {
+        M: '公',
+        F: '母',
+      },
+      bodyTypeMap: {
+        SMALL: '小型',
+        MEDIUM: '中型',
+        BIG: '大型',
+      },
+      ageMap: {
+        CHILD: '幼年',
+        ADULT: '成年',
+      },
       areaMap: {
         2: '台北市',
         3: '新北市',
@@ -205,5 +241,16 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scope>
+.chip-group {
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+}
+
+.map-link {
+  &:hover {
+    text-decoration: underline;
+  }
+}
 </style>
