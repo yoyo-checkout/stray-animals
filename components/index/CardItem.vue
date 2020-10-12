@@ -1,5 +1,9 @@
 <template>
-  <v-card hover>
+  <v-card
+    :to="{ path: `/show/${animalData.animal_id}` }"
+    hover
+    nuxt
+  >
     <v-img
       :src="animalData.album_file"
       aspect-ratio="1"
@@ -29,7 +33,7 @@
         <v-icon>mdi-map-marker</v-icon>
         <span
           class="blue--text map-link"
-          @click="openGoogleMap(animalData.shelter_name)"
+          @click.prevent="openGoogleMap(animalData.shelter_name)"
         >
           {{ maps.area[animalData.animal_area_pkid] }}
         </span>

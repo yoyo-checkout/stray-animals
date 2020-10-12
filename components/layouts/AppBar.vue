@@ -12,19 +12,28 @@
       contain
     />
 
+    <v-btn
+      v-if="isBackVisible"
+      to="/"
+      icon
+      nuxt
+    >
+      <v-icon>mdi-arrow-left</v-icon>
+    </v-btn>
+
     <v-spacer />
 
     <v-btn
       v-if="!isSearchDrawerOpen"
       icon
-      @click.stop="openSearch"
+      @click="openSearch"
     >
       <v-icon>mdi-magnify</v-icon>
     </v-btn>
     <v-btn
       v-else
       icon
-      @click.stop="closeSearch"
+      @click="closeSearch"
     >
       <v-icon>mdi-close</v-icon>
     </v-btn>
@@ -47,6 +56,10 @@ export default {
     ...mapState('Global', {
       isSearchDrawerOpen: state => state.isSearchDrawerOpen,
     }),
+
+    isBackVisible() {
+      return !this.isSearchDrawerOpen && this.$route.name !== 'index';
+    },
   },
   methods: {
     ...mapMutations({
