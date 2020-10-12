@@ -15,7 +15,7 @@
           <v-img
             :src="animal.album_file"
             aspect-ratio="1"
-            lazy-src="/logo.png"
+            lazy-src="/default-image.png"
           >
             <v-chip-group class="chip-group">
               <v-chip v-if="animal.animal_sex === 'F'" color="pink lighten-4">
