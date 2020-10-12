@@ -1,56 +1,54 @@
 <template>
-  <div>
-    <v-row
-      no-gutters
+  <v-row
+    no-gutters
+  >
+    <v-col
+      v-for="(animal, index) in animals"
+      :key="index"
+      cols="6"
+      md="4"
+      lg="3"
+      class="pa-3"
     >
-      <v-col
-        v-for="(animal, index) in animals"
-        :key="index"
-        cols="6"
-        md="4"
-        lg="3"
-        class="pa-3"
-      >
-        <v-card hover>
-          <v-img
-            :src="animal.album_file"
-            aspect-ratio="1"
-            lazy-src="/default-image.png"
-          >
-            <v-chip-group class="chip-group">
-              <v-chip v-if="animal.animal_sex === 'F'" color="pink lighten-4">
-                {{ maps.sex[animal.animal_sex] }}
-              </v-chip>
-              <v-chip v-if="animal.animal_sex === 'M'" color="blue lighten-4">
-                {{ maps.sex[animal.animal_sex] }}
-              </v-chip>
-              <v-chip v-if="animal.animal_bodytype" color="teal lighten-4">
-                {{ maps.bodyType[animal.animal_bodytype] }}
-              </v-chip>
-              <v-chip v-if="animal.animal_age" color="brown lighten-4">
-                {{ maps.age[animal.animal_age] }}
-              </v-chip>
-              <v-chip v-if="animal.animal_colour">
-                {{ animal.animal_colour }}
-              </v-chip>
-            </v-chip-group>
-          </v-img>
+      <v-card hover>
+        <v-img
+          :src="animal.album_file"
+          aspect-ratio="1"
+          lazy-src="/default-image.png"
+        >
+          <v-chip-group class="chip-group">
+            <v-chip v-if="animal.animal_sex === 'F'" color="pink lighten-4">
+              {{ maps.sex[animal.animal_sex] }}
+            </v-chip>
+            <v-chip v-if="animal.animal_sex === 'M'" color="blue lighten-4">
+              {{ maps.sex[animal.animal_sex] }}
+            </v-chip>
+            <v-chip v-if="animal.animal_bodytype" color="teal lighten-4">
+              {{ maps.bodyType[animal.animal_bodytype] }}
+            </v-chip>
+            <v-chip v-if="animal.animal_age" color="brown lighten-4">
+              {{ maps.age[animal.animal_age] }}
+            </v-chip>
+            <v-chip v-if="animal.animal_colour" color="grey lighten-2">
+              {{ animal.animal_colour }}
+            </v-chip>
+          </v-chip-group>
+        </v-img>
 
-          <v-card-text>
-            <div class="d-flex align-center">
-              <v-icon>mdi-map-marker</v-icon>
-              <span
-                class="blue--text map-link"
-                @click="openGoogleMap(animal.shelter_name)"
-              >
-                {{ maps.area[animal.animal_area_pkid] }}
-              </span>
-            </div>
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
-  </div>
+        <v-card-text>
+          <div class="d-flex align-center">
+            <v-icon>mdi-map-marker</v-icon>
+            <span
+              class="blue--text map-link"
+              @click="openGoogleMap(animal.shelter_name)"
+            >
+              {{ maps.area[animal.animal_area_pkid] }}
+            </span>
+          </div>
+        </v-card-text>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
 <script>

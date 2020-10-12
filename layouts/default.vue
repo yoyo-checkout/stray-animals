@@ -19,7 +19,7 @@
 <script>
 import AppBar from '@/components/layouts/AppBar.vue';
 import Footer from '@/components/layouts/Footer.vue';
-import SearchDrawer from '@/components/index/SearchDrawer';
+import SearchDrawer from '@/components/layouts/SearchDrawer';
 
 export default {
   components: {
