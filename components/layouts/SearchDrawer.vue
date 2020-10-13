@@ -26,7 +26,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scope>
+<style lang="scss">
 .v {
   &-navigation-drawer {
     top: 56px !important;

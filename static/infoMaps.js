@@ -28,6 +28,11 @@ export const area = {
   23: '連江縣',
 };
 
+export const bacterin = {
+  T: '是',
+  F: '否',
+}
+
 export const bodyType = {
   SMALL: '小型',
   MEDIUM: '中型',
@@ -74,3 +79,8 @@ export const shelter = {
   92: '新北市政府動物保護防疫處',
   96: '苗栗縣生態保育教育中心',
 };
+
+export const sterilization = {
+  T: '是',
+  F: '否',
+}

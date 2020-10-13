@@ -18,22 +18,130 @@
           sm="6"
         >
           <v-list>
-            <v-list-item>年紀：{{ maps.age[animal_age] }}</v-list-item>
-            <v-list-item>縣市：{{ maps.area[animal_area_pkid] }}</v-list-item>
-            <v-list-item>是否施打狂犬病疫苗：{{ animal_bacterin }}</v-list-item>
-            <v-list-item>體型：{{ maps.bodyType[animal_bodytype] }}</v-list-item>
-            <v-list-item>花色：{{ animal_colour }}</v-list-item>
-            <v-list-item>尋獲地：{{ animal_foundplace }}</v-list-item>
-            <v-list-item>種類：{{ animal_kind }}</v-list-item>
-            <v-list-item>實際所在地：{{ animal_place }}</v-list-item>
-            <v-list-item>備註：{{ animal_remark }}</v-list-item>
-            <v-list-item>性別：{{ maps.sex[animal_sex] }}</v-list-item>
-            <v-list-item>收容所：{{ maps.shelter[animal_shelter_pkid] }}</v-list-item>
-            <v-list-item>動物狀態：{{ animal_status }}</v-list-item>
-            <v-list-item>是否絕育：{{ animal_sterilization }}</v-list-item>
-            <v-list-item>收容所地址：{{ shelter_address }}</v-list-item>
-            <v-list-item>收容所名稱：{{ shelter_name }}</v-list-item>
-            <v-list-item>收容所名稱電話：{{ shelter_tel }}</v-list-item>
+            <!-- 性別 -->
+            <v-list-item v-if="animal_sex !== 'N'">
+              <v-list-item-icon>
+                <v-icon>
+                  mdi-human-male-female
+                </v-icon>
+              </v-list-item-icon>
+
+              <v-list-item-content>
+                <v-list-item-title>{{ maps.sex[animal_sex] }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+
+            <!-- 年紀 -->
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon>
+                  mdi-paw
+                </v-icon>
+              </v-list-item-icon>
+
+              <v-list-item-content>
+                <v-list-item-title>{{ maps.age[animal_age] }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+
+            <!-- 體型 -->
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon>
+                  mdi-paw
+                </v-icon>
+              </v-list-item-icon>
+
+              <v-list-item-content>
+                <v-list-item-title>{{ maps.bodyType[animal_bodytype] }}</v-list-item-title>
+                <v-list-item-subtitle>體型</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+
+            <!-- 花色 -->
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon>
+                  mdi-paw
+                </v-icon>
+              </v-list-item-icon>
+
+              <v-list-item-content>
+                <v-list-item-title>{{ animal_colour }}</v-list-item-title>
+                <v-list-item-subtitle>花色</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+
+            <!-- 疫苗 -->
+            <v-list-item v-if="animal_bacterin !== 'N'">
+              <v-list-item-icon>
+                <v-icon>
+                  mdi-needle
+                </v-icon>
+              </v-list-item-icon>
+
+              <v-list-item-content>
+                <v-list-item-title>{{ maps.bacterin[animal_bacterin] }}</v-list-item-title>
+                <v-list-item-subtitle>狂犬病疫苗</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+
+            <!-- 絕育 -->
+            <v-list-item v-if="animal_sterilization !== 'N'">
+              <v-list-item-icon>
+                <v-icon>
+                  mdi-paw-off
+                </v-icon>
+              </v-list-item-icon>
+
+              <v-list-item-content>
+                <v-list-item-title>{{ maps.sterilization[animal_sterilization] }}</v-list-item-title>
+                <v-list-item-subtitle>絕育</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+
+            <!-- 備註 -->
+            <v-list-item v-if="animal_remark !== ''">
+              <v-list-item-icon>
+                <v-icon>
+                  mdi-message-bulleted
+                </v-icon>
+              </v-list-item-icon>
+
+              <v-list-item-content>
+                <v-list-item-title>{{ animal_remark }}</v-list-item-title>
+                <v-list-item-subtitle>備註</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+
+            <v-divider inset />
+
+            <!-- 收容所 -->
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon>
+                  mdi-home
+                </v-icon>
+              </v-list-item-icon>
+
+              <v-list-item-content>
+                <v-list-item-title>{{ maps.shelter[animal_shelter_pkid] }}</v-list-item-title>
+                <v-list-item-subtitle>{{ shelter_address }}</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+
+            <!-- 電話 -->
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon>
+                  mdi-phone
+                </v-icon>
+              </v-list-item-icon>
+
+              <v-list-item-content>
+                <v-list-item-title>{{ shelter_tel }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
           </v-list>
         </v-col>
       </v-row>
@@ -50,7 +158,6 @@ export default {
     const animalId = context.route.params.id;
     const { data } = await context.$axios.get(`/api/TransService.aspx?UnitId=QcbUEzN6E6DL&animal_id=${animalId}`);
 
-    console.log(data);
     return data[0];
   },
   data () {
@@ -61,5 +168,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scope>
+<style scoped>
+>>> .v-list-item__subtitle {
+  white-space: initial;
+}
 </style>
