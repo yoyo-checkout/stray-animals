@@ -8,7 +8,7 @@ import CardList from '@/components/index/CardList';
 export default {
   layout: 'default',
   // async fetch ({ $axios }) {
-  //   const data = await $axios.$get('http://data.coa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL&$top=5&$skip=0&$filter=');
+  //   const data = await $axios.$get('https://data.coa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL&$top=5&$skip=0&$filter=');
   //
   //   console.log(data);
   // },
@@ -19,7 +19,7 @@ export default {
     return {
       animals: [
         {
-          animal_id: 1,
+          animal_id: 179971,
           animal_area_pkid: 16, // 縣市 id
           animal_shelter_pkid: 74, // 收容所 id
           animal_place: '臺南市動物之家善化站', // 實際所在地
@@ -39,7 +39,7 @@ export default {
           shelter_tel: '06-5832399' // 收容所電話
         },
         {
-          animal_id: 2,
+          animal_id: 179972,
           animal_area_pkid: 20,
           animal_shelter_pkid: 80,
           animal_place: '臺東縣動物收容中心',
@@ -59,7 +59,7 @@ export default {
           shelter_tel: '089-362011'
         },
         {
-          animal_id: 3,
+          animal_id: 179973,
           animal_area_pkid: 20,
           animal_shelter_pkid: 80,
           animal_place: '臺東縣動物收容中心',
@@ -79,7 +79,7 @@ export default {
           shelter_tel: '089-362011'
         },
         {
-          animal_id: 4,
+          animal_id: 179974,
           animal_area_pkid: 11,
           animal_shelter_pkid: 69,
           animal_place: '彰化縣流浪狗中途之家',
@@ -99,7 +99,7 @@ export default {
           shelter_tel: '04-8590638'
         },
         {
-          animal_id: 5,
+          animal_id: 179975,
           animal_area_pkid: 20,
           animal_shelter_pkid: 80,
           animal_place: '臺東縣動物收容中心',
