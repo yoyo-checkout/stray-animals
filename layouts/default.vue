@@ -57,3 +57,9 @@ html {
   margin: 0;
 }
 </style>
+
+<style lang="scss" scope>
+.v-main__wrap {
+  background-color: #FFF8E1;
+}
+</style>
