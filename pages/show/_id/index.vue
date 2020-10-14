@@ -125,7 +125,14 @@
               </v-list-item-icon>
 
               <v-list-item-content>
-                <v-list-item-title>{{ maps.shelter[animal_shelter_pkid] }}</v-list-item-title>
+                <v-list-item-title>
+                  <a
+                    :href="`https://www.google.com.tw/maps/search/${maps.shelter[animal_shelter_pkid]}`"
+                    target="_blank"
+                  >
+                    {{ maps.shelter[animal_shelter_pkid] }}
+                  </a>
+                </v-list-item-title>
                 <v-list-item-subtitle>{{ shelter_address }}</v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
@@ -139,7 +146,9 @@
               </v-list-item-icon>
 
               <v-list-item-content>
-                <v-list-item-title>{{ shelter_tel }}</v-list-item-title>
+                <v-list-item-title>
+                  <a :href="`tel:${shelter_tel}`">{{ shelter_tel }}</a>
+                </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list>
