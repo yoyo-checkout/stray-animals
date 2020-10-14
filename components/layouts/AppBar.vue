@@ -14,9 +14,8 @@
 
     <v-btn
       v-if="isBackVisible"
-      to="/"
       icon
-      nuxt
+      @click="goBack"
     >
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
@@ -72,6 +71,9 @@ export default {
     },
     closeSearch() {
       this.closeSearchDrawer();
+    },
+    goBack() {
+      this.$router.back();
     },
   },
 };

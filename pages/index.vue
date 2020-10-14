@@ -1,8 +1,11 @@
 <template>
-  <CardList :animal-list="animals" />
+  <keep-alive>
+    <CardList :animal-list="animals" />
+  </keep-alive>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
 import CardList from '@/components/index/CardList';
 
 export default {
@@ -10,14 +13,18 @@ export default {
   components: {
     CardList,
   },
-  async asyncData(context) {
-    // TODO: keep alive
-    const { data } = await context.$axios.get('/api/TransService.aspx?UnitId=QcbUEzN6E6DL&$top=20&animal_status=OPEN');
-
-    console.log(data);
-    return {
-      animals: data,
-    };
+  computed: {
+    ...mapState('Index', {
+      animals: state => state.animals,
+    }),
+  },
+  created() {
+    this.getAnimals();
+  },
+  methods: {
+    ...mapActions('Index', [
+      'getAnimals',
+    ]),
   },
 };
 </script>

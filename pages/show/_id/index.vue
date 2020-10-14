@@ -124,9 +124,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
->>> .v-list-item__subtitle {
-  white-space: initial;
-}
-</style>
