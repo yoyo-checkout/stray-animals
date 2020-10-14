@@ -8,14 +8,14 @@
 
     <v-list-item-content>
       <v-list-item-title>
-        <template v-if="title !== ''">
+        <template v-if="title">
           {{ title }}
         </template>
         <template v-else>
           <slot name="title" />
         </template>
       </v-list-item-title>
-      <v-list-item-subtitle v-if="subTitle !== ''">
+      <v-list-item-subtitle v-if="subTitle">
         {{ subTitle }}
       </v-list-item-subtitle>
     </v-list-item-content>

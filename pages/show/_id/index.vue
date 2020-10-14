@@ -20,19 +20,21 @@
           <v-list>
             <!-- 性別 -->
             <ListItem
-              v-if="animal_sex !== 'N'"
+              v-if="animal_sex && animal_sex !== 'N'"
               :title="maps.sex[animal_sex]"
               icon="mdi-human-male-female"
             />
 
             <!-- 年紀 -->
             <ListItem
+              v-if="animal_age"
               :title="maps.age[animal_age]"
               icon="mdi-paw"
             />
 
             <!-- 體型 -->
             <ListItem
+              v-if="animal_bodytype"
               :title="maps.bodyType[animal_bodytype]"
               icon="mdi-paw"
               sub-title="體型"
@@ -40,6 +42,7 @@
 
             <!-- 花色 -->
             <ListItem
+              v-if="animal_colour"
               :title="animal_colour"
               icon="mdi-paw"
               sub-title="花色"
@@ -47,7 +50,7 @@
 
             <!-- 疫苗 -->
             <ListItem
-              v-if="animal_bacterin !== 'N'"
+              v-if="animal_bacterin && animal_bacterin !== 'N'"
               :title="maps.bacterin[animal_bacterin]"
               icon="mdi-needle"
               sub-title="狂犬病疫苗"
@@ -55,7 +58,7 @@
 
             <!-- 絕育 -->
             <ListItem
-              v-if="animal_sterilization !== 'N'"
+              v-if="animal_sterilization && animal_sterilization !== 'N'"
               :title="maps.sterilization[animal_sterilization]"
               icon="mdi-paw-off"
               sub-title="絕育"
@@ -63,7 +66,7 @@
 
             <!-- 備註 -->
             <ListItem
-              v-if="animal_remark !== ''"
+              v-if="animal_remark"
               :title="animal_remark"
               icon="mdi-message-bulleted"
               sub-title="備註"
