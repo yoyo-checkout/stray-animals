@@ -19,138 +19,79 @@
         >
           <v-list>
             <!-- 性別 -->
-            <v-list-item v-if="animal_sex !== 'N'">
-              <v-list-item-icon>
-                <v-icon>
-                  mdi-human-male-female
-                </v-icon>
-              </v-list-item-icon>
-
-              <v-list-item-content>
-                <v-list-item-title>{{ maps.sex[animal_sex] }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
+            <ListItem
+              v-if="animal_sex !== 'N'"
+              :title="maps.sex[animal_sex]"
+              icon="mdi-human-male-female"
+            />
 
             <!-- 年紀 -->
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon>
-                  mdi-paw
-                </v-icon>
-              </v-list-item-icon>
-
-              <v-list-item-content>
-                <v-list-item-title>{{ maps.age[animal_age] }}</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
+            <ListItem
+              :title="maps.age[animal_age]"
+              icon="mdi-paw"
+            />
 
             <!-- 體型 -->
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon>
-                  mdi-paw
-                </v-icon>
-              </v-list-item-icon>
-
-              <v-list-item-content>
-                <v-list-item-title>{{ maps.bodyType[animal_bodytype] }}</v-list-item-title>
-                <v-list-item-subtitle>體型</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
+            <ListItem
+              :title="maps.bodyType[animal_bodytype]"
+              icon="mdi-paw"
+              sub-title="體型"
+            />
 
             <!-- 花色 -->
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon>
-                  mdi-paw
-                </v-icon>
-              </v-list-item-icon>
-
-              <v-list-item-content>
-                <v-list-item-title>{{ animal_colour }}</v-list-item-title>
-                <v-list-item-subtitle>花色</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
+            <ListItem
+              :title="animal_colour"
+              icon="mdi-paw"
+              sub-title="花色"
+            />
 
             <!-- 疫苗 -->
-            <v-list-item v-if="animal_bacterin !== 'N'">
-              <v-list-item-icon>
-                <v-icon>
-                  mdi-needle
-                </v-icon>
-              </v-list-item-icon>
-
-              <v-list-item-content>
-                <v-list-item-title>{{ maps.bacterin[animal_bacterin] }}</v-list-item-title>
-                <v-list-item-subtitle>狂犬病疫苗</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
+            <ListItem
+              v-if="animal_bacterin !== 'N'"
+              :title="maps.bacterin[animal_bacterin]"
+              icon="mdi-needle"
+              sub-title="狂犬病疫苗"
+            />
 
             <!-- 絕育 -->
-            <v-list-item v-if="animal_sterilization !== 'N'">
-              <v-list-item-icon>
-                <v-icon>
-                  mdi-paw-off
-                </v-icon>
-              </v-list-item-icon>
-
-              <v-list-item-content>
-                <v-list-item-title>{{ maps.sterilization[animal_sterilization] }}</v-list-item-title>
-                <v-list-item-subtitle>絕育</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
+            <ListItem
+              v-if="animal_sterilization !== 'N'"
+              :title="maps.sterilization[animal_sterilization]"
+              icon="mdi-paw-off"
+              sub-title="絕育"
+            />
 
             <!-- 備註 -->
-            <v-list-item v-if="animal_remark !== ''">
-              <v-list-item-icon>
-                <v-icon>
-                  mdi-message-bulleted
-                </v-icon>
-              </v-list-item-icon>
-
-              <v-list-item-content>
-                <v-list-item-title>{{ animal_remark }}</v-list-item-title>
-                <v-list-item-subtitle>備註</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
+            <ListItem
+              v-if="animal_remark !== ''"
+              :title="animal_remark"
+              icon="mdi-message-bulleted"
+              sub-title="備註"
+            />
 
             <v-divider inset />
 
             <!-- 收容所 -->
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon>
-                  mdi-home
-                </v-icon>
-              </v-list-item-icon>
-
-              <v-list-item-content>
-                <v-list-item-title>
-                  <a
-                    :href="`https://www.google.com.tw/maps/search/${maps.shelter[animal_shelter_pkid]}`"
-                    target="_blank"
-                  >
-                    {{ maps.shelter[animal_shelter_pkid] }}
-                  </a>
-                </v-list-item-title>
-                <v-list-item-subtitle>{{ shelter_address }}</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
+            <ListItem
+              icon="mdi-home"
+              :sub-title="shelter_address"
+            >
+              <template v-slot:title>
+                <a
+                  :href="`https://www.google.com.tw/maps/search/${maps.shelter[animal_shelter_pkid]}`"
+                  target="_blank"
+                >
+                  {{ maps.shelter[animal_shelter_pkid] }}
+                </a>
+              </template>
+            </ListItem>
 
             <!-- 電話 -->
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon>
-                  mdi-phone
-                </v-icon>
-              </v-list-item-icon>
-
-              <v-list-item-content>
-                <v-list-item-title>
-                  <a :href="`tel:${shelter_tel}`">{{ shelter_tel }}</a>
-                </v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
+            <ListItem icon="mdi-phone">
+              <template v-slot:title>
+                <a :href="`tel:${shelter_tel}`">{{ shelter_tel }}</a>
+              </template>
+            </ListItem>
           </v-list>
         </v-col>
       </v-row>
@@ -160,9 +101,13 @@
 
 <script>
 import * as infoMaps from '@/static/infoMaps';
+import ListItem from '@/components/show/ListItem';
 
 export default {
   layout: 'default',
+  components: {
+    ListItem,
+  },
   async asyncData(context) {
     const animalId = context.route.params.id;
     const { data } = await context.$axios.get(`/api/TransService.aspx?UnitId=QcbUEzN6E6DL&animal_id=${animalId}`);
