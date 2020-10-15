@@ -7,8 +7,10 @@
     <v-img
       :src="animalData.album_file"
       aspect-ratio="1"
-      lazy-src="/default-image.png"
     >
+      <template v-slot:placeholder>
+        <v-img src="/default-image.png" />
+      </template>
       <v-chip-group class="chip-group">
         <v-chip v-if="animalData.animal_sex === 'F'" color="pink lighten-4">
           {{ maps.sex[animalData.animal_sex] }}
