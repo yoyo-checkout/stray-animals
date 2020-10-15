@@ -9,8 +9,11 @@
           <v-img
             :src="album_file"
             aspect-ratio="1"
-            lazy-src="/default-image.png"
-          />
+          >
+            <template v-slot:placeholder>
+              <v-img src="/default-image.png" />
+            </template>
+          </v-img>
         </v-col>
 
         <v-col
