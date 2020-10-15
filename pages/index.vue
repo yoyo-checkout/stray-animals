@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { debounce } from 'lodash';
 import { mapState, mapActions, mapMutations } from 'vuex';
 import CardList from '@/components/index/CardList';
 
@@ -36,12 +37,14 @@ export default {
       'nextPage',
     ]),
 
-    handleScroll({ target: { scrollingElement: { clientHeight, scrollTop, scrollHeight } } }) {
+    handleScroll: debounce(function(e) {
+      const { clientHeight, scrollTop, scrollHeight } = e.target.scrollingElement;
+
       if (clientHeight + scrollTop >= scrollHeight) {
         this.nextPage();
         this.loadMoreAnimals();
       }
-    },
+    }, 150),
   },
 };
 </script>
