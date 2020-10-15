@@ -19,6 +19,7 @@ export const actions = {
     // TODO: loading
     // TODO: add filter
     try {
+      alert('load');
       const { data } = await this.$axios.get(`/api/TransService.aspx?UnitId=QcbUEzN6E6DL&$top=20&$skip=${20 * state.page}&animal_status=OPEN`);
 
       commit('addAnimals', data);
