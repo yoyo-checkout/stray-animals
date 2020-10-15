@@ -1,9 +1,8 @@
 <template>
   <keep-alive>
     <CardList
-      v-scroll.self="handleScroll"
+      v-scroll="handleScroll"
       :animal-list="animals"
-      class="overflow-y-auto card-list"
     />
   </keep-alive>
 </template>
@@ -37,7 +36,7 @@ export default {
       'nextPage',
     ]),
 
-    handleScroll({ target: { clientHeight, scrollTop, scrollHeight } }) {
+    handleScroll({ target: { scrollingElement: { clientHeight, scrollTop, scrollHeight } } }) {
       if (clientHeight + scrollTop >= scrollHeight) {
         this.nextPage();
         this.loadMoreAnimals();
@@ -46,9 +45,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.card-list {
-  max-height: calc(100vh - 56px);
-}
-</style>
