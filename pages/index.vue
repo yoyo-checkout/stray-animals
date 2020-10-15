@@ -19,7 +19,10 @@ export default {
     }),
   },
   created() {
-    this.getAnimals();
+    if (!this.animals.length) {
+      console.log('get');
+      this.getAnimals();
+    }
   },
   methods: {
     ...mapActions('Index', [
