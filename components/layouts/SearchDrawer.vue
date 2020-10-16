@@ -3,6 +3,7 @@
     :value="isSearchDrawerOpen"
     width="100%"
     height="calc(100vh - 56px)"
+    hide-overlay
     overlay-color="transparent"
     overlay-opacity="1"
     app
@@ -26,14 +27,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .v {
   &-navigation-drawer {
     top: 56px !important;
-  }
-
-  &-overlay {
-    z-index: 0 !important;
   }
 }
 </style>

@@ -41,9 +41,11 @@ export default {
 };
 </script>
 
-<style scoped>
->>> .v-list-item__title,
->>> .v-list-item__subtitle {
-  white-space: initial;
+<style lang="scss" scoped>
+.v-list-item {
+  &__title,
+  &__subtitle {
+    white-space: initial;
+  }
 }
 </style>

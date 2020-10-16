@@ -67,14 +67,16 @@ export default {
 };
 </script>
 
-<style scoped>
->>> .chip-group {
+<style lang="scss" scoped>
+.chip-group {
   position: absolute;
   bottom: 0;
   left: 5px;
 }
 
->>> .map-link:hover {
-  text-decoration: underline;
+.map-link {
+  &:hover {
+    text-decoration: underline;
+  }
 }
 </style>
