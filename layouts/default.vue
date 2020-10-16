@@ -22,7 +22,7 @@ import { mapState } from 'vuex';
 import AppBar from '@/components/layouts/AppBar';
 import Footer from '@/components/layouts/Footer';
 import Loading from '@/components/layouts/Loading';
-import SearchDrawer from '@/components/layouts/SearchDrawer';
+import SearchDrawer from '@/components/layouts/SearchDrawer/SearchDrawer';
 
 export default {
   components: {

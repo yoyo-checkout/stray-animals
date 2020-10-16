@@ -20,6 +20,7 @@ export default {
   computed: {
     ...mapState('Global', {
       isLoading: state => state.isLoading,
+      isSearchDrawerOpen: state => state.isSearchDrawerOpen,
     }),
     ...mapState('Index', {
       animals: state => state.animals,
@@ -43,7 +44,11 @@ export default {
     handleScroll: debounce(function(e) {
       const { clientHeight, scrollTop, scrollHeight } = e.target.scrollingElement;
 
-      if (!this.isLoading && clientHeight + scrollTop >= scrollHeight) {
+      if (
+        !this.isLoading &&
+        !this.isSearchDrawerOpen &&
+        clientHeight + scrollTop >= scrollHeight
+      ) {
         this.NEXT_PAGE();
         this.loadMoreAnimals();
       }
