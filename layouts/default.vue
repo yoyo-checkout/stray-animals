@@ -6,6 +6,7 @@
     <v-main>
       <!-- Provides the application the proper gutter -->
       <v-container fluid>
+        <Loading v-if="true" />
         <Nuxt />
       </v-container>
     </v-main>
@@ -19,12 +20,14 @@
 <script>
 import AppBar from '@/components/layouts/AppBar.vue';
 import Footer from '@/components/layouts/Footer.vue';
+import Loading from '@/components/layouts/Loading.vue';
 import SearchDrawer from '@/components/layouts/SearchDrawer';
 
 export default {
   components: {
     AppBar,
     Footer,
+    Loading,
     SearchDrawer,
   },
 };
