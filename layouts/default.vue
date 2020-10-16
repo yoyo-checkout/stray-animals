@@ -6,7 +6,7 @@
     <v-main>
       <!-- Provides the application the proper gutter -->
       <v-container fluid>
-        <Loading v-if="true" />
+        <Loading v-show="isLoading" />
         <Nuxt />
       </v-container>
     </v-main>
@@ -18,9 +18,10 @@
 </template>
 
 <script>
-import AppBar from '@/components/layouts/AppBar.vue';
-import Footer from '@/components/layouts/Footer.vue';
-import Loading from '@/components/layouts/Loading.vue';
+import { mapState } from 'vuex';
+import AppBar from '@/components/layouts/AppBar';
+import Footer from '@/components/layouts/Footer';
+import Loading from '@/components/layouts/Loading';
 import SearchDrawer from '@/components/layouts/SearchDrawer';
 
 export default {
@@ -29,6 +30,11 @@ export default {
     Footer,
     Loading,
     SearchDrawer,
+  },
+  computed: {
+    ...mapState('Global', {
+      isLoading: state => state.isLoading,
+    }),
   },
 };
 </script>

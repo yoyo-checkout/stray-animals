@@ -1,13 +1,13 @@
 export const state = () => ({
+  isLoading: false,
   isSearchDrawerOpen: false,
 })
 
 export const mutations = {
-  openSearchDrawer(state) {
-    state.isSearchDrawerOpen = true;
+  SET_IS_LOADING(state, bool) {
+    state.isLoading = bool;
   },
-
-  closeSearchDrawer(state) {
-    state.isSearchDrawerOpen = false;
+  SET_SEARCH_DRAWER_IS_OPEN(state, status) {
+    state.isSearchDrawerOpen = status;
   },
 }

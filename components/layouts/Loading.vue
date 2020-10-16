@@ -14,7 +14,7 @@
   bottom: 72px;
   left: 0;
   background-color: #21212175;
-  z-index: 999;
+  z-index: 5;
 }
 
 .spinner {

@@ -62,15 +62,14 @@ export default {
   },
   methods: {
     ...mapMutations({
-      openSearchDrawer: 'Global/openSearchDrawer',
-      closeSearchDrawer: 'Global/closeSearchDrawer',
+      SET_SEARCH_DRAWER_IS_OPEN: 'Global/SET_SEARCH_DRAWER_IS_OPEN',
     }),
 
     openSearch() {
-      this.openSearchDrawer();
+      this.SET_SEARCH_DRAWER_IS_OPEN(true);
     },
     closeSearch() {
-      this.closeSearchDrawer();
+      this.SET_SEARCH_DRAWER_IS_OPEN(false);
     },
     goBack() {
       this.$router.back();

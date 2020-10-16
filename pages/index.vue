@@ -18,6 +18,9 @@ export default {
     CardList,
   },
   computed: {
+    ...mapState('Global', {
+      isLoading: state => state.isLoading,
+    }),
     ...mapState('Index', {
       animals: state => state.animals,
       page: state => state.page,
@@ -34,14 +37,14 @@ export default {
       'loadMoreAnimals',
     ]),
     ...mapMutations('Index', [
-      'nextPage',
+      'NEXT_PAGE',
     ]),
 
     handleScroll: debounce(function(e) {
       const { clientHeight, scrollTop, scrollHeight } = e.target.scrollingElement;
 
-      if (clientHeight + scrollTop >= scrollHeight) {
-        this.nextPage();
+      if (!this.isLoading && clientHeight + scrollTop >= scrollHeight) {
+        this.NEXT_PAGE();
         this.loadMoreAnimals();
       }
     }, 150),
