@@ -1,8 +1,12 @@
 <template>
   <div class="loading-wrapper">
-    <v-icon class="spinner" size="72">
-      mdi-loading
-    </v-icon>
+    <v-progress-circular
+      :size="50"
+      :width="5"
+      class="spinner"
+      color="amber"
+      indeterminate
+    />
   </div>
 </template>
 
@@ -21,16 +25,5 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: loading 1s infinite;
-
-  @keyframes loading {
-    from {
-      transform: translate(-50%, -50%) rotate(0);
-    }
-
-    to {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
-  }
 }
 </style>
