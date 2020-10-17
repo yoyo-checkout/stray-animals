@@ -13,22 +13,22 @@
   >
     <v-list>
       <!-- 動物類型 -->
-      <ListItem title="動物類型" :chips="kinds" />
+      <ListItem title="動物類型" :data="kinds" />
 
       <!-- 動物性別 -->
-      <ListItem title="動物性別" :chips="sexes" />
+      <!-- <ListItem title="動物性別" :chips="sexes" /> -->
 
       <!-- 動物年紀 -->
-      <ListItem title="動物年紀" :chips="ages" />
+      <!-- <ListItem title="動物年紀" :chips="ages" /> -->
 
       <!-- 動物體型 -->
-      <ListItem title="動物體型" :chips="bodyTypes" />
+      <!-- <ListItem title="動物體型" :chips="bodyTypes" /> -->
 
       <!-- 是否絕育 -->
-      <ListItem title="是否絕育" :chips="sterilizations" />
+      <!-- <ListItem title="是否絕育" :chips="sterilizations" /> -->
 
       <!-- 動物所在地 -->
-      <ListItem title="動物所在地" :chips="areas" :column="true" />
+      <!-- <ListItem title="動物所在地" :chips="areas" :column="true" /> -->
     </v-list>
 
     <v-btn class="submit-btn" color="info">
@@ -52,8 +52,18 @@ export default {
       areas: area,
       bodyTypes: bodyType,
       kinds: {
-        DOG: '狗',
-        CAT: '貓',
+        isMultiple: false,
+        selected: 'dog',
+        chips: [
+          {
+            label: '狗',
+            value: 'dog',
+          },
+          {
+            label: '貓',
+            value: 'cat',
+          },
+        ],
       },
       sexes: sex,
       sterilizations: sterilization,

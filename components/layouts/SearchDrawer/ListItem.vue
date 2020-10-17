@@ -6,18 +6,19 @@
       </v-list-item-title>
       <v-list-item-subtitle>
         <v-chip-group
-          class="chip-group"
           :column="column"
+          :value="data.selected"
         >
           <v-chip active-class="amber">
             全部
           </v-chip>
           <v-chip
-            v-for="(chip, i) in chips"
+            v-for="(chip, i) in data.chips"
             :key="i"
             active-class="amber"
+            :value="chip.value"
           >
-            {{ chip }}
+            {{ chip.label }}
           </v-chip>
         </v-chip-group>
       </v-list-item-subtitle>
@@ -32,7 +33,7 @@ export default {
       type: String,
       required: true,
     },
-    chips: {
+    data: {
       type: Object,
       required: true,
     },
