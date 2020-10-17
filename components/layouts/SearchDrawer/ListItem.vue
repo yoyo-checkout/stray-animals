@@ -6,8 +6,9 @@
       </v-list-item-title>
       <v-list-item-subtitle>
         <v-chip-group
-          :column="column"
+          :column="data.isMultiple"
           :value="data.selected"
+          :multiple="data.isMultiple"
         >
           <v-chip active-class="amber">
             全部
