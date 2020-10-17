@@ -5,11 +5,18 @@
         {{ title }}
       </v-list-item-title>
       <v-list-item-subtitle>
-        <v-chip-group class="chip-group">
+        <v-chip-group
+          class="chip-group"
+          :column="column"
+        >
           <v-chip active-class="amber">
             全部
           </v-chip>
-          <v-chip v-for="(chip, i) in chips" :key="i" active-class="amber">
+          <v-chip
+            v-for="(chip, i) in chips"
+            :key="i"
+            active-class="amber"
+          >
             {{ chip }}
           </v-chip>
         </v-chip-group>
@@ -26,8 +33,12 @@ export default {
       required: true,
     },
     chips: {
-      // type: Array || Object,
+      type: Object,
       required: true,
+    },
+    column: {
+      type: Boolean,
+      default: false,
     },
   },
 };

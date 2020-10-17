@@ -28,8 +28,7 @@
       <ListItem title="是否絕育" :chips="sterilizations" />
 
       <!-- 動物所在地 -->
-      <!-- TODO column -->
-      <ListItem title="動物所在地" :chips="areas" />
+      <ListItem title="動物所在地" :chips="areas" :column="true" />
     </v-list>
 
     <v-btn class="submit-btn" color="info">
@@ -52,10 +51,10 @@ export default {
       ages: age,
       areas: area,
       bodyTypes: bodyType,
-      kinds: [
-        '狗',
-        '貓',
-      ],
+      kinds: {
+        DOG: '狗',
+        CAT: '貓',
+      },
       sexes: sex,
       sterilizations: sterilization,
     };
