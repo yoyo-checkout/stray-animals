@@ -52,7 +52,7 @@ export default {
         this.NEXT_PAGE();
         this.loadMoreAnimals();
       }
-    }, 150),
+    }, 100),
   },
 };
 </script>

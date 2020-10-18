@@ -67,12 +67,17 @@ export default {
 
     openSearch() {
       this.SET_SEARCH_DRAWER_IS_OPEN(true);
+      this.toggleHTMLScrollY('hidden');
     },
     closeSearch() {
       this.SET_SEARCH_DRAWER_IS_OPEN(false);
+      this.toggleHTMLScrollY('scroll');
     },
     goBack() {
       this.$router.back();
+    },
+    toggleHTMLScrollY(status) {
+      document.getElementsByTagName('html')[0].style.overflowY = status;
     },
   },
 };
