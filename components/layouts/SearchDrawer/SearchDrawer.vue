@@ -48,7 +48,9 @@
 </template>
 
 <script>
+import * as _ from 'lodash';
 import { mapState } from 'vuex';
+import { age, area, bodyType, kind, sex, sterilization } from '@/static/infoMaps.js';
 import ListItem from '@/components/layouts/SearchDrawer/ListItem';
 
 export default {
@@ -59,171 +61,33 @@ export default {
     return {
       ages: {
         isMultiLine: false,
-        selected: ['child', 'adult'],
-        chips: [
-          {
-            label: '幼年',
-            value: 'child',
-          },
-          {
-            label: '成年',
-            value: 'adult',
-          },
-        ],
+        selected: _.map(age, (val, key) => key),
+        chips: _.map(age, (val, key) => ({ label: val, value: key })),
       },
       areas: {
         isMultiLine: true,
-        selected: ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'],
-        chips: [
-          {
-            label: '台北市',
-            value: '2',
-          },
-          {
-            label: '新北市',
-            value: '3',
-          },
-          {
-            label: '基隆市',
-            value: '4',
-          },
-          {
-            label: '宜蘭縣',
-            value: '5',
-          },
-          {
-            label: '桃園縣',
-            value: '6',
-          },
-          {
-            label: '新竹縣',
-            value: '7',
-          },
-          {
-            label: '新竹市',
-            value: '8',
-          },
-          {
-            label: '苗栗縣',
-            value: '9',
-          },
-          {
-            label: '台中市',
-            value: '10',
-          },
-          {
-            label: '彰化縣',
-            value: '11',
-          },
-          {
-            label: '南投縣',
-            value: '12',
-          },
-          {
-            label: '雲林縣',
-            value: '13',
-          },
-          {
-            label: '嘉義縣',
-            value: '14',
-          },
-          {
-            label: '嘉義市',
-            value: '15',
-          },
-          {
-            label: '台南市',
-            value: '16',
-          },
-          {
-            label: '高雄市',
-            value: '17',
-          },
-          {
-            label: '屏東縣',
-            value: '18',
-          },
-          {
-            label: '花蓮縣',
-            value: '19',
-          },
-          {
-            label: '台東縣',
-            value: '20',
-          },
-          {
-            label: '澎湖縣',
-            value: '21',
-          },
-          {
-            label: '金門縣',
-            value: '22',
-          },
-          {
-            label: '連江縣',
-            value: '23',
-          },
-        ],
+        selected: _.map(area, (val, key) => key),
+        chips: _.map(area, (val, key) => ({ label: val, value: key })),
       },
       bodyTypes: {
         isMultiLine: false,
-        selected: ['big', 'medium', 'small'],
-        chips: [
-          {
-            label: '大型',
-            value: 'big',
-          },
-          {
-            label: '中型',
-            value: 'medium',
-          },
-          {
-            label: '小型',
-            value: 'small',
-          },
-        ],
+        selected: _.map(bodyType, (val, key) => key),
+        chips: _.map(bodyType, (val, key) => ({ label: val, value: key })),
       },
       kinds: {
         isMultiLine: false,
-        selected: ['dog', 'cat'],
-        chips: [
-          {
-            label: '狗',
-            value: 'dog',
-          },
-          {
-            label: '貓',
-            value: 'cat',
-          },
-        ],
+        selected: _.map(kind, (val, key) => key),
+        chips: _.map(kind, (val, key) => ({ label: val, value: key })),
       },
       sexes: {
         isMultiLine: false,
-        selected: ['f', 'm'],
-        chips: [
-          {
-            label: '母',
-            value: 'f',
-          },
-          {
-            label: '公',
-            value: 'm',
-          },
-        ],
+        selected: _.map(sex, (val, key) => key),
+        chips: _.map(sex, (val, key) => ({ label: val, value: key })),
       },
       sterilizations: {
         isMultiLine: false,
-        selected: ['f', 't'],
-        chips: [
-          {
-            label: '否',
-            value: 'f',
-          },
-          {
-            label: '是',
-            value: 't',
-          },
-        ],
+        selected: _.map(sterilization, (val, key) => key),
+        chips: _.map(sterilization, (val, key) => ({ label: val, value: key })),
       },
     };
   },
@@ -247,7 +111,6 @@ export default {
 }
 
 .submit-btn {
-  position: absolute;
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);

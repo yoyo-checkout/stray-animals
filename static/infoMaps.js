@@ -39,6 +39,11 @@ export const bodyType = {
   BIG: '大型',
 };
 
+export const kind = {
+  cat: '貓',
+  dog: '狗',
+};
+
 export const sex = {
   M: '公',
   F: '母',
