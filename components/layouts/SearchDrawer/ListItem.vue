@@ -5,19 +5,27 @@
         {{ title }}
       </v-list-item-title>
       <v-list-item-subtitle>
-        <v-chip-group
-          :column="data.isMultiple"
-          :value="data.selected"
-          :multiple="data.isMultiple"
-        >
-          <v-chip active-class="amber">
+        <v-chip-group v-model="allVal">
+          <v-chip
+            active-class="amber"
+            value="all"
+            @click="toggleAll"
+          >
             全部
           </v-chip>
+        </v-chip-group>
+
+        <v-chip-group
+          v-model="data.selected"
+          :column="data.isMultiLine"
+          multiple
+          @change="updateChips"
+        >
           <v-chip
             v-for="(chip, i) in data.chips"
             :key="i"
-            active-class="amber"
             :value="chip.value"
+            active-class="amber"
           >
             {{ chip.label }}
           </v-chip>
@@ -41,6 +49,30 @@ export default {
     column: {
       type: Boolean,
       default: false,
+    },
+  },
+  data() {
+    return {
+      isAll: true,
+    };
+  },
+  computed: {
+    allVal: {
+      get() {
+        return this.isAll ? 'all' : '';
+      },
+      set(val) {
+        return val;
+      },
+    },
+  },
+  methods: {
+    toggleAll() {
+      this.isAll = !this.isAll;
+      this.data.selected = this.isAll ? this.data.chips.map(chip => chip.value) : [];
+    },
+    updateChips(chosenChips) {
+      this.isAll = chosenChips.length === this.data.chips.length;
     },
   },
 };

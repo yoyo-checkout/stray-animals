@@ -15,17 +15,27 @@
       <!-- 動物類型 -->
       <ListItem title="動物類型" :data="kinds" />
 
+      <v-divider />
+
       <!-- 動物性別 -->
       <ListItem title="動物性別" :data="sexes" />
+
+      <v-divider />
 
       <!-- 動物年紀 -->
       <ListItem title="動物年紀" :data="ages" />
 
+      <v-divider />
+
       <!-- 動物體型 -->
       <ListItem title="動物體型" :data="bodyTypes" />
 
+      <v-divider />
+
       <!-- 是否絕育 -->
       <ListItem title="是否絕育" :data="sterilizations" />
+
+      <v-divider />
 
       <!-- 動物所在地 -->
       <ListItem title="動物所在地" :data="areas" />
@@ -48,8 +58,8 @@ export default {
   data() {
     return {
       ages: {
-        isMultiple: false,
-        selected: 'child',
+        isMultiLine: false,
+        selected: ['child', 'adult'],
         chips: [
           {
             label: '幼年',
@@ -62,8 +72,8 @@ export default {
         ],
       },
       areas: {
-        isMultiple: true,
-        selected: ['2'],
+        isMultiLine: true,
+        selected: ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'],
         chips: [
           {
             label: '台北市',
@@ -156,8 +166,8 @@ export default {
         ],
       },
       bodyTypes: {
-        isMultiple: false,
-        selected: 'big',
+        isMultiLine: false,
+        selected: ['big', 'medium', 'small'],
         chips: [
           {
             label: '大型',
@@ -174,8 +184,8 @@ export default {
         ],
       },
       kinds: {
-        isMultiple: false,
-        selected: 'dog',
+        isMultiLine: false,
+        selected: ['dog', 'cat'],
         chips: [
           {
             label: '狗',
@@ -188,8 +198,8 @@ export default {
         ],
       },
       sexes: {
-        isMultiple: false,
-        selected: 'f',
+        isMultiLine: false,
+        selected: ['f', 'm'],
         chips: [
           {
             label: '母',
@@ -202,8 +212,8 @@ export default {
         ],
       },
       sterilizations: {
-        isMultiple: false,
-        selected: 'f',
+        isMultiLine: false,
+        selected: ['f', 't'],
         chips: [
           {
             label: '否',
