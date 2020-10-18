@@ -8,7 +8,7 @@ export const area = {
   3: '新北市',
   4: '基隆市',
   5: '宜蘭縣',
-  6: '桃園縣',
+  6: '桃園市',
   7: '新竹縣',
   8: '新竹市',
   9: '苗栗縣',
@@ -42,6 +42,7 @@ export const bodyType = {
 export const kind = {
   cat: '貓',
   dog: '狗',
+  // others: '其他',
 };
 
 export const sex = {
