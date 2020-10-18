@@ -38,7 +38,7 @@ export default {
       'loadMoreAnimals',
     ]),
     ...mapMutations('Index', [
-      'NEXT_PAGE',
+      'SET_PAGE',
     ]),
 
     handleScroll: debounce(function(e) {
@@ -49,7 +49,7 @@ export default {
         !this.isSearchDrawerOpen &&
         clientHeight + scrollTop >= scrollHeight
       ) {
-        this.NEXT_PAGE();
+        this.SET_PAGE(this.page + 1);
         this.loadMoreAnimals();
       }
     }, 100),

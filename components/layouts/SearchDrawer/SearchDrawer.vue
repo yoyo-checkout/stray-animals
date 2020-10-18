@@ -53,7 +53,7 @@
 
 <script>
 import * as _ from 'lodash';
-import { mapState } from 'vuex';
+import { mapState, mapActions, mapMutations } from 'vuex';
 import { age, area, bodyType, kind, sex, sterilization } from '@/static/infoMaps.js';
 import ListItem from '@/components/layouts/SearchDrawer/ListItem';
 
@@ -101,23 +101,41 @@ export default {
     }),
   },
   methods: {
-    async handleSearch() {
+    ...mapActions('Index', [
+      'getAnimals',
+    ]),
+    ...mapMutations('Global', [
+      'SET_SEARCH_DRAWER_IS_OPEN',
+    ]),
+    ...mapMutations('Index', [
+      'SET_FILTER',
+      'SET_PAGE',
+    ]),
+
+    handleSearch() {
       const filter = {
         ages: this.isSelectedAll('ages') ? '' : `animal_age=${this.ages.selected}`,
         areas: this.isSelectedAll('areas') ? '' : `animal_area_pkid=${this.areas.selected}`,
         bodyTypes: this.isSelectedAll('bodyTypes') ? '' : `animal_bodytype=${this.bodyTypes.selected}`,
-        kinds: this.isSelectedAll('kinds') ? '' : `animal_kind=${this.kinds.selected}`,
+        kinds: this.isSelectedAll('kinds') ? '' : `animal_kind=${kind[this.kinds.selected]}`,
         sexes: this.isSelectedAll('sexes') ? '' : `animal_sex=${this.sexes.selected}`,
         sterilizations: this.isSelectedAll('sterilizations') ? '' : `animal_sterilization=${this.sterilizations.selected}`,
       };
-      const searchStr = _.filter(filter, tag => tag !== '').join('&');
 
-      const { data } = await this.$axios.get(`/api/TransService.aspx?UnitId=QcbUEzN6E6DL&$top=20&animal_status=OPEN&${searchStr}`);
-
-      console.log(data);
+      this.SET_FILTER(filter);
+      this.SET_PAGE(1);
+      this.getAnimals();
+      this.SET_SEARCH_DRAWER_IS_OPEN(false);
+      this.enableHTMLScrollY('scroll');
     },
     isSelectedAll(tag) {
       return this[tag].selected === 'all';
+    },
+    enableHTMLScrollY(status) {
+      const htmlDOM = document.getElementsByTagName('html')[0];
+
+      htmlDOM.style.overflowY = status;
+      htmlDOM.scrollTop = 0;
     },
   },
 };

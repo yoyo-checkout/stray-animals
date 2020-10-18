@@ -61,9 +61,9 @@ export default {
     },
   },
   methods: {
-    ...mapMutations({
-      SET_SEARCH_DRAWER_IS_OPEN: 'Global/SET_SEARCH_DRAWER_IS_OPEN',
-    }),
+    ...mapMutations('Global', [
+      'SET_SEARCH_DRAWER_IS_OPEN',
+    ]),
 
     openSearch() {
       this.SET_SEARCH_DRAWER_IS_OPEN(true);
