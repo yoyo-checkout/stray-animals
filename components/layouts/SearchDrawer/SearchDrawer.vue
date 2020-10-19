@@ -113,20 +113,14 @@ export default {
     ]),
 
     handleSearch() {
-      const filter = {
-        ages: this.isSelectedAll('ages') ? '' : `animal_age=${this.ages.selected}`,
-        areas: this.isSelectedAll('areas') ? '' : `animal_area_pkid=${this.areas.selected}`,
-        bodyTypes: this.isSelectedAll('bodyTypes') ? '' : `animal_bodytype=${this.bodyTypes.selected}`,
-        kinds: this.isSelectedAll('kinds') ? '' : `animal_kind=${kind[this.kinds.selected]}`,
-        sexes: this.isSelectedAll('sexes') ? '' : `animal_sex=${this.sexes.selected}`,
-        sterilizations: this.isSelectedAll('sterilizations') ? '' : `animal_sterilization=${this.sterilizations.selected}`,
-      };
+      const filter = this.getFilter();
 
       this.SET_FILTER(filter);
       this.SET_PAGE(1);
       this.getAnimals();
       this.SET_SEARCH_DRAWER_IS_OPEN(false);
       this.enableHTMLScrollY('scroll');
+      this.$router.push('/');
     },
     isSelectedAll(tag) {
       return this[tag].selected === 'all';
@@ -136,6 +130,16 @@ export default {
 
       htmlDOM.style.overflowY = status;
       htmlDOM.scrollTop = 0;
+    },
+    getFilter() {
+      return {
+        ages: this.isSelectedAll('ages') ? '' : `animal_age=${this.ages.selected}`,
+        areas: this.isSelectedAll('areas') ? '' : `animal_area_pkid=${this.areas.selected}`,
+        bodyTypes: this.isSelectedAll('bodyTypes') ? '' : `animal_bodytype=${this.bodyTypes.selected}`,
+        kinds: this.isSelectedAll('kinds') ? '' : `animal_kind=${kind[this.kinds.selected]}`,
+        sexes: this.isSelectedAll('sexes') ? '' : `animal_sex=${this.sexes.selected}`,
+        sterilizations: this.isSelectedAll('sterilizations') ? '' : `animal_sterilization=${this.sterilizations.selected}`,
+      };
     },
   },
 };

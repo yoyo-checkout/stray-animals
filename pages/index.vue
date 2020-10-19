@@ -28,7 +28,7 @@ export default {
     }),
   },
   created() {
-    if (!this.animals.length) {
+    if (!this.animals.length && !this.isLoading) {
       this.getAnimals();
     }
   },
