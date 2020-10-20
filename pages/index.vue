@@ -6,7 +6,7 @@
       :animal-list="animals"
     />
     <div
-      v-else
+      v-else-if="!isLoading"
       class="text-h6"
       align="center"
     >
