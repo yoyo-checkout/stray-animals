@@ -12,6 +12,16 @@ export default {
     ]
   },
 
+  manifest: {
+    name: '浪浪回家 | Stray Animals',
+    short_name: '浪浪回家',
+    description: '找到中意的可愛浪浪們，讓牠們回到家',
+    background_color: '#fbd157',
+    theme_color: '#fbd157',
+    lang: 'zh',
+    start_url: '/',
+  },
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
   ],
