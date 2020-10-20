@@ -13,6 +13,7 @@ export default {
   },
 
   manifest: {
+    icon: '/favicon.ico',
     name: '浪浪回家 | Stray Animals',
     short_name: '浪浪回家',
     description: '找到中意的可愛浪浪們，讓牠們回到家',
