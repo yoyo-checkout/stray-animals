@@ -1,7 +1,7 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'stray-animals',
+    title: '浪浪回家',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -12,16 +12,40 @@ export default {
     ]
   },
 
-  manifest: {
-    icon: '/favicon.ico',
-    name: '浪浪回家 | Stray Animals',
-    short_name: '浪浪回家',
-    description: '找到中意的可愛浪浪們，讓牠們回到家',
-    background_color: '#fbd157',
-    theme_color: '#fbd157',
-    lang: 'zh',
-    start_url: '/',
+  pwa: {
+    icon: {
+      source: '/favicon.ico',
+    },
   },
+  // manifest: {
+  //   icon: {
+  //     src: '/favicon.ico',
+  //     sizes: '72x72 96x96 128x128 256x256',
+  //   },
+  //   name: '浪浪回家 | Stray Animals',
+  //   short_name: '浪浪回家',
+  //   description: '找到中意的可愛浪浪們，讓牠們回到家',
+  //   display: 'fullscreen',
+  //   background_color: '#fbd157',
+  //   theme_color: '#fbd157',
+  //   lang: 'zh',
+  //   start_url: '/',
+  // },
+  //
+  // render: {
+  //   http2: {
+  //     push: true,
+  //   },
+  //   static: {
+  //     maxAge: '1y',
+  //     setHeaders(res, path) {
+  //       if (path.includes('sw.js')) {
+  //         res.setHeader('Cache-Control', `public, max-age=${15 * 60}`);
+  //       }
+  //     },
+  //   },
+  //   resourceHints: false,
+  // },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
