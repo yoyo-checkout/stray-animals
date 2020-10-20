@@ -1,9 +1,17 @@
 <template>
   <keep-alive>
     <CardList
+      v-if="animals.length"
       v-scroll="handleScroll"
       :animal-list="animals"
     />
+    <div
+      v-else
+      class="text-h6"
+      align="center"
+    >
+      查無資料
+    </div>
   </keep-alive>
 </template>
 
