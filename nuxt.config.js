@@ -5,7 +5,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '找到中意的可愛浪浪們，讓牠們回到家' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -15,6 +15,13 @@ export default {
   pwa: {
     icon: {
       source: '/favicon.ico',
+    },
+    meta: {
+      name: '浪浪回家',
+      description: '找到中意的可愛浪浪們，讓牠們回到家',
+      theme_color: '#fbd157',
+      lang: 'zh',
+      nativeUI: true,
     },
   },
   // manifest: {
