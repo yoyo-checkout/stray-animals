@@ -8,7 +8,9 @@ export default {
       { hid: 'description', name: 'description', content: '找到中意的可愛浪浪們，讓牠們回到家' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'apple-touch-startup-image', href: '/default-image.png' },
+      { rel: 'apple-touch-icon', href: '/favicon.ico' },
     ]
   },
 
@@ -34,7 +36,8 @@ export default {
       start_url: '/',
       background_color: '#fbd157',
       theme_color: '#fbd157',
-      lang: 'zh',
+      lang: 'zh-Hant-TW',
+      orientation: 'landscape',
     },
   },
 
