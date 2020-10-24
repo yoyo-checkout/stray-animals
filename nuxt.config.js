@@ -16,7 +16,7 @@ export default {
 
   pwa: {
     icon: {
-      source: '/favicon.ico',
+      source: '/default-image.png',
     },
     meta: {
       name: '浪浪回家 | Stray Animals',
@@ -30,7 +30,7 @@ export default {
       short_name: '浪浪回家',
       description: '尋找喜歡的可愛浪浪們，讓牠們回到家',
       icons: {
-        source: '/favicon.ico',
+        source: '/default-image.png',
         sizes: [64, 120, 144, 152, 192, 384, 512],
       },
       start_url: '/',
