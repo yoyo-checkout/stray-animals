@@ -9,14 +9,15 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'apple-touch-startup-image', href: '/default-image.png' },
-      { rel: 'apple-touch-icon', href: '/default-image.png' },
+      { rel: 'shortcut icon', href: '/favicon.ico' },
+      { rel: 'apple-touch-startup-image', href: '/touch-image.png' },
+      { rel: 'apple-touch-icon', href: '/touch-image.png' },
     ]
   },
 
   pwa: {
     icon: {
-      source: '/default-image.png',
+      source: '/touch-image.png',
     },
     meta: {
       name: '浪浪回家 | Stray Animals',
@@ -30,7 +31,7 @@ export default {
       short_name: '浪浪回家',
       description: '尋找喜歡的可愛浪浪們，讓牠們回到家',
       icons: {
-        source: '/default-image.png',
+        source: '/touch-image.png',
         sizes: [64, 120, 144, 152, 192, 384, 512],
       },
       start_url: '/',
