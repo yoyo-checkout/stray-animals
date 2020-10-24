@@ -17,8 +17,8 @@ export default {
       source: '/favicon.ico',
     },
     meta: {
-      name: '浪浪回家',
-      description: '找到中意的可愛浪浪們，讓牠們回到家',
+      name: '浪浪回家 | Stray Animals',
+      description: '找到可愛的浪浪們，讓牠們回到家',
       theme_color: '#fbd157',
       lang: 'zh',
       nativeUI: true,
@@ -26,13 +26,12 @@ export default {
     manifest: {
       name: '浪浪回家 | Stray Animals',
       short_name: '浪浪回家',
-      description: '找到中意的可愛浪浪們，讓牠們回到家',
+      description: '找到可愛的浪浪們，讓牠們回到家',
       icons: {
         source: '/favicon.ico',
         sizes: [64, 120, 144, 152, 192, 384, 512],
       },
       start_url: '/',
-      display: 'fullscreen',
       background_color: '#fbd157',
       theme_color: '#fbd157',
       lang: 'zh',
@@ -54,15 +53,15 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    // https://go.nuxtjs.dev/pwa
+    '@nuxtjs/pwa',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
     '@nuxtjs/proxy',
   ],
 
