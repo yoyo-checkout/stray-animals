@@ -38,7 +38,6 @@ export default {
       background_color: '#fbd157',
       theme_color: '#fbd157',
       lang: 'zh-Hant-TW',
-      orientation: 'landscape',
     },
   },
 
